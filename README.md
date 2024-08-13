@@ -72,7 +72,7 @@ pip install -r requirements.txt
 
 Install LLaMA >3.0 with Ollama: https://ollama.com/
 
-### Option 2: Running with Docker
+### Option 2: Running with Docker (recommended)
 
 #### Build and Run the Docker Container
 

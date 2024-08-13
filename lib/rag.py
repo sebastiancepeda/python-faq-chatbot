@@ -28,13 +28,10 @@ class ConversationalRAGSystem(RAGSystem):
         self.conversation_history = []
 
     def rag(self, query, top_k=3):
-        # Add the new query to the conversation history
         self.conversation_history.append(query)
         
-        # Combine the conversation history into a single context
         conversation_history_str = " ".join(self.conversation_history)
         
-        # Generate the response using the full conversation as context
         query_embedding = self.corpus_index.retriever.encode(query, convert_to_tensor=True).unsqueeze(0)
         retrieved_docs = self.corpus_index.search(query_embedding, top_k)
         retrieved_text = " ".join(retrieved_docs)

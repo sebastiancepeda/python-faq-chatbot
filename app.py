@@ -63,11 +63,9 @@ def main():
     st.title("Python FAQ Chatbot")
     st.write("Ask a question related to Python, and I will retrieve relevant information and answer.")
 
-    # Chat history
     for exchange in st.session_state['conversation_history']:
         st.chat_message(exchange["role"]).write(exchange["content"])
 
-    # New query
     if prompt := st.chat_input("Enter your question here:"):
         logger.info(f"{prompt}")
         st.session_state['conversation_history'].append({"role": "user", "content": prompt})

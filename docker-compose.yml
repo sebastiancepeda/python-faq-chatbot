@@ -10,4 +10,4 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - TOKENIZERS_PARALLELISM=false
-    network_mode: "host"  # Add this line
+    network_mode: "host"
