@@ -13,6 +13,9 @@ python_faq_chatbot/
 ├── faiss_index.py
 ├── generators.py
 ├── rag.py
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
 └── data/
     └── python_faqs.json
 ```
@@ -22,6 +25,9 @@ python_faq_chatbot/
 - `faiss_index.py`: Manages the FAISS index and the `CorpusIndex` class.
 - `generators.py`: Contains the logic for text generation using LLaMA or other models.
 - `rag.py`: Implements the RAG system, including a conversational variant.
+- `Dockerfile`: Dockerfile to containerize the Streamlit application.
+- `docker-compose.yml`: Docker Compose file to manage the deployment of the application.
+- `requirements.txt`: Lists the Python dependencies required for the project.
 - `data/python_faqs.json`: JSON file containing the Python FAQs used by the system.
 
 ## Features
@@ -39,7 +45,9 @@ git clone git@github.com:sebastiancepeda/python-faq-chatbot.git
 cd python-faq-chatbot
 ```
 
-### Create a Virtual Environment
+### Option 1: Running Locally (without Docker)
+
+#### Create a Virtual Environment
 
 It’s recommended to create a virtual environment to isolate dependencies.
 
@@ -48,7 +56,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Install Dependencies
+#### Install Dependencies
 
 Install the required Python packages:
 
@@ -56,29 +64,30 @@ Install the required Python packages:
 pip install -r requirements.txt
 ```
 
-### Configure the Environment
+#### Configure the Environment
 
-Install Llama >3.0 with Ollama: https://ollama.com/
+Install LLaMA >3.0 with Ollama: https://ollama.com/
 
-## Data
+### Option 2: Running with Docker
 
-The `python_faqs.json` file contains frequently asked questions about Python. This data was sourced from the [Python Documentation](https://docs.python.org/3/) and is licensed under the Python Software Foundation License Version 2. Code examples and recipes in the data are additionally licensed under the Zero Clause BSD License.
+#### Build and Run the Docker Container
 
-## Usage
+1. **Ensure Docker and Docker Compose are installed** on your machine.
+2. **Build and run the container** using Docker Compose:
 
-### Running the Chatbot
+   ```bash
+   docker-compose up
+   ```
 
-You can start the chatbot by running:
-
-```bash
-streamlit run app.py
-```
-
-This will launch the chatbot in your web browser, accessible at `http://localhost:8501`.
+This will build the Docker image (if not already built) and start the Streamlit application, making it accessible at `http://localhost:8501`.
 
 ### Interacting with the Chatbot
 
 The chatbot interface allows you to input Python-related questions. The system will remember the conversation context, enabling a more natural interaction. The conversation history is displayed on the screen to provide context for ongoing interactions.
+
+## Data
+
+The `python_faqs.json` file contains frequently asked questions about Python. This data was sourced from the [Python Documentation](https://docs.python.org/3/) and is licensed under the Python Software Foundation License Version 2. Code examples and recipes in the data are additionally licensed under the Zero Clause BSD License.
 
 ## Contribution
 

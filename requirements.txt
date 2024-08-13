@@ -1,0 +1,5 @@
+streamlit
+loguru
+sentence-transformers
+faiss-cpu
+openai
