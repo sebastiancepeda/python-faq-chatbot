@@ -3,6 +3,10 @@
 
 This repository contains a Conversational Retrieval-Augmented Generation (RAG) chatbot designed to answer Python-related questions. The chatbot uses a FAISS index for efficient retrieval of relevant information and integrates with an LLM model for generating context-aware responses in a conversational manner.
 
+## Demo
+
+![Python FAQ Chatbot Demo](docs/streamlit-python-faq-chatbot.gif)
+
 ## Project Structure
 
 ```
