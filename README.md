@@ -60,6 +60,10 @@ pip install -r requirements.txt
 
 Install Llama >3.0 with Ollama: https://ollama.com/
 
+## Data
+
+The `python_faqs.json` file contains frequently asked questions about Python. This data was sourced from the [Python Documentation](https://docs.python.org/3/) and is licensed under the Python Software Foundation License Version 2. Code examples and recipes in the data are additionally licensed under the Zero Clause BSD License.
+
 ## Usage
 
 ### Running the Chatbot
